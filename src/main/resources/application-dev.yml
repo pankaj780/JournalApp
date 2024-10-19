@@ -1,0 +1,28 @@
+spring:
+  data:
+    mongodb:
+      url: mongodb+srv://comeonshukla:KQRb01pqGwOJsdX9@cluster0.xxsrk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: JournalDB
+      auto-index-creation: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+logging:
+  level:
+    root: info
+    com:
+      comeonshukla: DEBUG  # Set specific package logging level
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: logs/app.log  # Specify the log file name
+    path: logs  # Specify the log directory (ensure it exists)
+    max-size: 10MB  # Max size of log file
+    max-history: 30  # Number of days to keep logs
+
+
+

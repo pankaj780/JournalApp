@@ -10,6 +10,18 @@ server:
   servlet:
     context-path: /api/v1
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: comeonshukla@gmail.com
+    password: rwco vapt mkjv gsjf
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+          enable: false
+
 logging:
   level:
     root: info
@@ -23,6 +35,7 @@ logging:
     path: logs  # Specify the log directory (ensure it exists)
     max-size: 10MB  # Max size of log file
     max-history: 30  # Number of days to keep logs
+
 
 
 

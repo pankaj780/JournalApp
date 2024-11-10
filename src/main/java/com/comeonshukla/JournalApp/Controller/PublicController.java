@@ -1,6 +1,7 @@
 package com.comeonshukla.JournalApp.Controller;
 
 import com.comeonshukla.JournalApp.Entity.User;
+import com.comeonshukla.JournalApp.Services.MailService;
 import com.comeonshukla.JournalApp.Services.UserDetailServiceImpl;
 import com.comeonshukla.JournalApp.Services.UserService;
 import com.comeonshukla.JournalApp.Utility.JwtUtility;
@@ -29,6 +30,8 @@ public class PublicController {
     @Autowired
     JwtUtility jwtUtility;
 
+    @Autowired(required=true)
+    MailService mailService;
 
     @GetMapping("/")
     public String healthCheck(){
@@ -59,6 +62,11 @@ public class PublicController {
             log.error("Something went wrong."+e);
             return new ResponseEntity<>("Something went wrong.", HttpStatus.BAD_GATEWAY);
         }
+    }
+
+    @GetMapping("sendMail")
+    public void SendEmail(){
+        mailService.sendMail("pks2221@yopmail.com","Greetings","Hello Pankaj");
     }
 
 }

@@ -9,8 +9,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.management.relation.Role;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +28,10 @@ public class User {
     private  String username;
     @NonNull
     private String password;
+
+    private String email;
+
+    private boolean sentiments;
 
     private LocalDateTime date;
 

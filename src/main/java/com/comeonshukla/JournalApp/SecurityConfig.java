@@ -33,7 +33,7 @@ public class SecurityConfig  {
          http
                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize)->{
-                    authorize.requestMatchers("api/v1/**","/createUser","/login").permitAll();
+                    authorize.requestMatchers("api/v1/**","/createUser","/login","sendMail").permitAll();
                     authorize.requestMatchers("/admin/**").hasRole("ADMIN");
                     authorize.anyRequest().authenticated();
                 });
